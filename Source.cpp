@@ -21,11 +21,11 @@ const double EPS = 1e-4;
 int main() {
     double h = (B - A) / 10;
 
-    int precision= abs(log10(EPS));
+    int precision = abs(log10(EPS));
     int columnWidth = 2 * precision;
-    cout << setw(columnWidth) << "y(x)" << setw(columnWidth) << "s(x)" << endl;
-    for (double x = A; x <= B; x += h) {
-        cout << setw(columnWidth) << setprecision(precision)
+    cout << setw(columnWidth) << 'x' << setw(columnWidth + 1) << "y(x)" << setw(columnWidth + 1) << "s(x)" << endl;
+    for (double x = A; x < B + h / 2; x += h) {
+        cout << setw(columnWidth) << x << " | " << setw(columnWidth) << setprecision(precision)
             << y(x) << " | " << s(x, EPS) / 4 << endl;
     }
 
